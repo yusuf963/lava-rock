@@ -1,6 +1,6 @@
 import express from 'express';
-import healthRouter from './routes/health.js';
-import { someUtilityFunction } from './utility.js';
+import healthRouter from './routes/health';
+import { someUtilityFunction } from './utility';
 
 const app = express();
 app.use(express.json());
