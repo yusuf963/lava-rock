@@ -7,15 +7,23 @@
     "node": ">=20.6"
   },
   "scripts": {
-    "dev": "tsx watch src/index.ts",
-    "dev:nodemon": "nodemon",
     "build": "tsc -p tsconfig.build.json",
-    "start": "cross-env NODE_OPTIONS=\"--import specifier-resolution-node/register\" node dist/index.js",
-    "lint": "eslint .",
+    "lint": "eslint . --max-warnings 0",
     "lint:fix": "eslint . --fix",
     "format": "prettier --check .",
     "format:fix": "prettier --write .",
-    "test": "NODE_OPTIONS=--experimental-vm-modules jest --runInBand"
+    "postinstall": "npm run build",
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest --runInBand",
+    "posttest": "npm run format && ts-prune",
+    "check:unused": "ts-prune",
+    "debug": "export NODE_ENV=development && tsx watch src/index.ts",
+    "start": "export NODE_ENV=production && cross-env NODE_OPTIONS=\"--import specifier-resolution-node/register\" node dist/index.js",
+    "run:prod": "export NODE_ENV=production && npm run build && NODE_OPTIONS=\"--import specifier-resolution-node/register\" node dist/index.js",
+    "coverage": "nyc npm run test",
+    "clean": "rm -rf ./dist ./public/js ./public/css ./stats",
+    "pm2": "pm2",
+    "start:dev": "pm2 start ecosystem.config.js --only app-dev",
+    "start:prod": "pm2 start ecosystem.config.js --only app-prod"
   },
   "dependencies": {
     "express": "^4.19.2",
