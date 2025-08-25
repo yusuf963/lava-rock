@@ -17,7 +17,8 @@
     // "allowImportingTsExtensions": false,
     "noFallthroughCasesInSwitch": true,
     "forceConsistentCasingInFileNames": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "esModuleInterop": true
   },
   "include": ["src", "tests", "*.d.ts"]
 }

@@ -5,15 +5,34 @@ const prettier = require('eslint-plugin-prettier');
 const unusedImports = require('eslint-plugin-unused-imports');
 
 module.exports = [
+  {
+    ignores: ['dist/**', 'node_modules/**'], // top-level ignore
+  },
   js.configs.recommended,
   {
-    ignores: ['dist', 'node_modules'],
     files: ['**/*.ts', '**/*.tsx', '**/*.js'],
     languageOptions: {
       parser: tsParser,
       parserOptions: {
         project: './tsconfig.json',
         tsconfigRootDir: __dirname,
+      },
+      globals: {
+        console: 'readonly',
+        process: 'readonly',
+        Buffer: 'readonly',
+        __dirname: 'readonly',
+        __filename: 'readonly',
+        global: 'readonly',
+        describe: 'readonly',
+        it: 'readonly',
+        expect: 'readonly',
+        beforeEach: 'readonly',
+        afterEach: 'readonly',
+        beforeAll: 'readonly',
+        afterAll: 'readonly',
+        error: 'readonly',
+        err: 'readonly',
       },
     },
     plugins: {
@@ -32,6 +51,7 @@ module.exports = [
         'error',
         { varsIgnorePattern: '^_', argsIgnorePattern: '^_' },
       ],
+      'no-undef': 'error',
     },
   },
 ];

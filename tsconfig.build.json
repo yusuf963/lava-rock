@@ -5,13 +5,5 @@
     "sourceMap": true,
     "noEmit": false
   },
-  "exclude": [
-    "tests",
-    "**/*.test.ts",
-    "**/*.test.js",
-    "**/*.spec.ts",
-    "**/*.spec.js",
-    "dist",
-    "node_modules"
-  ]
+  "exclude": ["tests", "**/*.test.ts", "**/*.test.js", "dist", "node_modules"]
 }
