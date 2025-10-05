@@ -23,7 +23,8 @@
     "clean": "rm -rf ./dist ./public/js ./public/css ./stats",
     "pm2": "pm2",
     "start:dev": "pm2 start ecosystem.config.js --only app-dev",
-    "start:prod": "pm2 start ecosystem.config.js --only app-prod"
+    "start:prod": "pm2 start ecosystem.config.js --only app-prod",
+    "prepare": "husky"
   },
   "dependencies": {
     "express": "^4.19.2",
@@ -36,8 +37,6 @@
     "@types/node": "^22.5.4",
     "@types/supertest": "^6.0.3",
     "@typescript-eslint/eslint-plugin": "^8.40.0",
-    "eslint-plugin-prettier": "^5.5.4",
-    "eslint-plugin-unused-imports": "^4.2.0",
     "@typescript-eslint/parser": "^8.40.0",
     "cross-env": "^7.0.3",
     "eslint": "^9.10.0",
