@@ -30,7 +30,7 @@ tests/
   app.test.ts
 ```
 
-### Configuration
+### What this template include and how its configured
 
 #### TypeScript:
 
@@ -56,13 +56,10 @@ Lint code (npm run lint)
 Run tests with coverage (npm test -- --ci --coverage)
 Build project (npm run build)
 
-### PR Check Workflow
+### Minimal Express app
 
-Automated checks run on every pull request to main, develop, or trunk:
+with ESM and json import
 
-Checkout code
-Set up Node.js 22
-Install dependencies (npm ci)
-Lint code (npm run lint)
-Run tests with coverage (npm test -- --ci --coverage)
-Build project (npm run build)
+### test folder with test example
+
+### Docker files(docker and compose)
